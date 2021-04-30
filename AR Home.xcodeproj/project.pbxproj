@@ -20,7 +20,6 @@
 		52B7C294263902DA000A47EC /* AR_HomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7C293263902DA000A47EC /* AR_HomeUITests.swift */; };
 		52F41DB2263903F000028F01 /* postController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F41DB1263903F000028F01 /* postController.swift */; };
 		52F41DF926390CD800028F01 /* Objects in Resources */ = {isa = PBXBuildFile; fileRef = 52F41DF826390CD800028F01 /* Objects */; };
-		52F41DFF2639171800028F01 /* 3D Objects in Resources */ = {isa = PBXBuildFile; fileRef = 52F41DFE2639171800028F01 /* 3D Objects */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +59,6 @@
 		52B7C295263902DA000A47EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52F41DB1263903F000028F01 /* postController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postController.swift; sourceTree = "<group>"; };
 		52F41DF826390CD800028F01 /* Objects */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Objects; sourceTree = SOURCE_ROOT; };
-		52F41DFE2639171800028F01 /* 3D Objects */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = "3D Objects"; path = "Pods/CardSlider/3D Objects"; sourceTree = SOURCE_ROOT; };
 		5DE4B7B71223803CF9F51EC0 /* Pods-AR HomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR HomeTests.debug.xcconfig"; path = "Target Support Files/Pods-AR HomeTests/Pods-AR HomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E81E3247F9DB0688A1782FA /* Pods_AR_HomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_HomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6458AB9A4CE54D58864AC13E /* Pods_AR_Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +135,6 @@
 				52B7C275263902D8000A47EC /* ViewController.swift */,
 				52F41DB1263903F000028F01 /* postController.swift */,
 				52B7C277263902D8000A47EC /* Main.storyboard */,
-				52F41DFE2639171800028F01 /* 3D Objects */,
 				52F41DF826390CD800028F01 /* Objects */,
 				52B7C27A263902DA000A47EC /* Assets.xcassets */,
 				52B7C27C263902DA000A47EC /* LaunchScreen.storyboard */,
@@ -290,7 +287,6 @@
 				52B7C27E263902DA000A47EC /* LaunchScreen.storyboard in Resources */,
 				52B7C27B263902DA000A47EC /* Assets.xcassets in Resources */,
 				52B7C279263902D8000A47EC /* Main.storyboard in Resources */,
-				52F41DFF2639171800028F01 /* 3D Objects in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@
 		3CDB996923260FF95FC2DEFE48966FD3 /* Pods-AR Home-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC55DC52D631022F034B8D10FD643E /* Pods-AR Home-dummy.m */; };
 		4521DA3FEEB5B44D3FAB271E3422EDF5 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67609F249B3D3AD94EF8F742E7F25 /* ARViewController.swift */; };
 		48E4354CFE10AC9E76CAD54740000E87 /* CardSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8AFD43B612FEBB55639E190C6C244 /* CardSliderCell.swift */; };
+		52AD1AA6263BD89500824192 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 52AD1AA5263BD89500824192 /* Images */; };
 		67B667AA41FD375A5DC5335275871853 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		69DD0461BDB40BE02AD34F8671B19694 /* CardSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028244E5DFDCE0A28048ACD78E4EC287 /* CardSliderViewController.swift */; };
 		74987D17B6011C174DED9E2BAA3C2FB7 /* CardTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD701F8078D4A9FFE6BE9954892A0C6 /* CardTitleView.swift */; };
@@ -76,8 +77,7 @@
 		308C5B082B12D284E1CA0211387AB254 /* CardSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CardSlider-prefix.pch"; sourceTree = "<group>"; };
 		46966C85DA3997B6EAA5A7910FA9173A /* CardSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CardSlider-dummy.m"; sourceTree = "<group>"; };
 		50A67609F249B3D3AD94EF8F742E7F25 /* ARViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = CardSlider/CardSlider/Public/ARViewController.swift; sourceTree = "<group>"; };
-		52F41E03263917EA00028F01 /* 3D Objects */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = "3D Objects"; sourceTree = "<group>"; };
-		52F41E0C2639182D00028F01 /* ship.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ship.scn; sourceTree = "<group>"; };
+		52AD1AA5263BD89500824192 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../../Images; sourceTree = "<group>"; };
 		561656AD3C40D4A786DCCB945213CEFC /* Pods_AR_Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D7251016D3B7A797D8C0649374D3CF /* Pods-AR Home.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AR Home.release.xcconfig"; sourceTree = "<group>"; };
 		65FEA1C43A43B46DF5F9BD88D2DD5BB4 /* Pods_AR_HomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_HomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,8 +184,7 @@
 		11F06EDFC4C24C675D97666ABA85C03E /* CardSlider */ = {
 			isa = PBXGroup;
 			children = (
-				52F41E0C2639182D00028F01 /* ship.scn */,
-				52F41E03263917EA00028F01 /* 3D Objects */,
+				52AD1AA5263BD89500824192 /* Images */,
 				50A67609F249B3D3AD94EF8F742E7F25 /* ARViewController.swift */,
 				B07273DBCD3F881462F07E368CD5C31F /* CardsLayout.swift */,
 				DCF8AFD43B612FEBB55639E190C6C244 /* CardSliderCell.swift */,
@@ -500,6 +499,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AD1AA6263BD89500824192 /* Images in Resources */,
 				17290FC33443075BAF0FC8C9AD5FB5A2 /* CardSlider.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
