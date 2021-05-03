@@ -65,7 +65,7 @@ class House {
 class ViewController: UIViewController, ARSCNViewDelegate, CardSliderDataSource, UISearchBarDelegate {
     
     fileprivate let data = [
-        CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "model")),
+        CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "House")),
         CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Residential Building")),
         CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Two Story House")),
         CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Cottage"))
@@ -126,7 +126,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CardSliderDataSource,
         houseImages.append(UIImage(named: "Cottage")!)
         houseImages.append(UIImage(named: "Residential Building")!)
         houseImages.append(UIImage(named: "Two Story House")!)
-        houseImages.append(UIImage(named: "model")!)
+        houseImages.append(UIImage(named: "House")!)
 
         
     }
@@ -148,7 +148,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CardSliderDataSource,
 ////
 //            }
 //        }
-        data2.append(Item(image: UIImage(named: "model")!, rating: nil, title: "model", subtitle: "House", description: "2 story house plans (sometimes written \"two story house plans\") are probably the most popular story configuration for a primary residence. A traditional 2 story house plan presents the main living spaces (living room, kitchen, etc) on the main level, while all bedrooms reside upstairs."))
+        data2.append(Item(image: UIImage(named: "House")!, rating: nil, title: "model", subtitle: "House", description: "This compact plan features a fully equipped kitchen with a walk-in pantry and eating bar that comfortably seats up to four. The spacious floor plan accommodates full sized furniture and appliances. 9' ceilings and pocket doors throughout the home create a spacious and open feeling. The pocket doors leading into the master suite and guest room can either be closed for privacy or can provide a large 5' wide opening. The modern walk-in shower in the master suite provides both easy access and eliminates the maintenance required by glass doors. Measuring over 6' from end to end, the shower accommodates dual shower heads. The master suite also includes a dual vanity and a large walk-in closet. This design also features a covered front porch, double garage, mudroom/laundry room and a full bath for guests."))
 
         data2.append(Item(image: UIImage(named: "Cottage")!, rating: nil, title: "Cottage", subtitle: "Cottage House", description: "This compact plan features a fully equipped kitchen with a walk-in pantry and eating bar that comfortably seats up to four. The spacious floor plan accommodates full sized furniture and appliances. 9' ceilings and pocket doors throughout the home create a spacious and open feeling. The pocket doors leading into the master suite and guest room can either be closed for privacy or can provide a large 5' wide opening. The modern walk-in shower in the master suite provides both easy access and eliminates the maintenance required by glass doors. Measuring over 6' from end to end, the shower accommodates dual shower heads. The master suite also includes a dual vanity and a large walk-in closet. This design also features a covered front porch, double garage, mudroom/laundry room and a full bath for guests."))
         data2.append(Item(image: UIImage(named: "Residential Building")!, rating: nil, title: "Residential Building", subtitle: "Residential Building", description: "A residential building is defined as the building which provides more than half of its floor area for dwelling purposes. In other words, residential building provides sleeping accommodation with or without cooking or dining or both facilities."))

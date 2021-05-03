@@ -59,7 +59,7 @@ class VirtualObjectNode: SCNNode {
 class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
         var current_AR_Object = ""
-
+    var i = 1;
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,7 +89,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         let virtualNode = VirtualObjectNode(current_AR_Object)
         DispatchQueue.main.async(execute: {
-            node.addChildNode(virtualNode)
+            if (self.i == 1) {
+                self.i+=1
+                node.addChildNode(virtualNode)
+            }
         })
     }
     
@@ -102,9 +105,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
         print("\(self.classForCoder)/" + #function)
     }
-    
-    
-    
 }
 
 
