@@ -60,12 +60,18 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
         var current_AR_Object = ""
     var i = 1;
+    
+    
+    
+    @IBOutlet weak var toggleDebugPoints: UISwitch!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         sceneView.delegate = self
         sceneView.scene = SCNScene()
-        sceneView.debugOptions = [SCNDebugOptions.showFeaturePoints]
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,7 +92,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         print("\(self.classForCoder)/" + #function)
         guard let planeAnchor = anchor as? ARPlaneAnchor else {fatalError()}
-        
+        print("House Anchored!")
         let virtualNode = VirtualObjectNode(current_AR_Object)
         DispatchQueue.main.async(execute: {
             if (self.i == 1) {
@@ -105,6 +111,26 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
         print("\(self.classForCoder)/" + #function)
     }
+    
+    
+    
+    @IBAction func toggleDebugPointsFunc(_ sender: UISwitch) {
+        if sender.isOn == true {
+            print("Button Pressed")
+            sceneView.debugOptions = [SCNDebugOptions.showFeaturePoints]
+        }
+        if sender.isOn == false {
+            print("Button Depressed")
+            sceneView.debugOptions = []
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
 }
 
 

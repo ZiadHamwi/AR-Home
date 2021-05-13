@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -216,19 +216,35 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6na-70-bGj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             </arscnView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fuo-Wh-eja">
+                                <rect key="frame" x="308" y="20" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleDebugPointsFunc:" destination="Bb5-zK-gsf" eventType="valueChanged" id="Xjj-r2-koe"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgq-8Z-woq">
+                                <rect key="frame" x="164" y="597" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LfZ-5q-pxb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LfZ-5q-pxb" firstAttribute="trailing" secondItem="6na-70-bGj" secondAttribute="trailing" id="3CI-DV-fHf"/>
                             <constraint firstItem="6na-70-bGj" firstAttribute="top" secondItem="LfZ-5q-pxb" secondAttribute="top" id="HMw-vh-Xir"/>
+                            <constraint firstItem="LfZ-5q-pxb" firstAttribute="trailing" secondItem="wgq-8Z-woq" secondAttribute="trailing" constant="165" id="Jm1-FN-lrE"/>
+                            <constraint firstItem="LfZ-5q-pxb" firstAttribute="trailing" secondItem="Fuo-Wh-eja" secondAttribute="trailing" constant="18" id="QQe-hD-GW6"/>
                             <constraint firstItem="6na-70-bGj" firstAttribute="leading" secondItem="LfZ-5q-pxb" secondAttribute="leading" id="Ukb-iU-E1g"/>
+                            <constraint firstItem="wgq-8Z-woq" firstAttribute="leading" secondItem="LfZ-5q-pxb" secondAttribute="leading" constant="164" id="dDE-Wm-4XN"/>
                             <constraint firstItem="LfZ-5q-pxb" firstAttribute="bottom" secondItem="6na-70-bGj" secondAttribute="bottom" id="eVm-Du-QYN"/>
+                            <constraint firstItem="Fuo-Wh-eja" firstAttribute="top" secondItem="LfZ-5q-pxb" secondAttribute="top" constant="20" id="gIn-zJ-DLt"/>
+                            <constraint firstItem="LfZ-5q-pxb" firstAttribute="bottom" secondItem="wgq-8Z-woq" secondAttribute="bottom" constant="20" id="yd4-xN-YF3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5ZO-H2-5yB"/>
                     <connections>
                         <outlet property="sceneView" destination="6na-70-bGj" id="ftI-E1-7fl"/>
+                        <outlet property="toggleDebugPoints" destination="Fuo-Wh-eja" id="ez0-wr-Zck"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="job-h8-IXZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
