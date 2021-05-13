@@ -71,7 +71,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         sceneView.delegate = self
         sceneView.scene = SCNScene()
-        
+//
     }
     
     override func viewWillAppear(_ animated: Bool) {
