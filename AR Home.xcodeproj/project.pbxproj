@@ -23,7 +23,6 @@
 		B42A9CAD265058D20007D653 /* houses.json in Resources */ = {isa = PBXBuildFile; fileRef = B42A9CAC265058D10007D653 /* houses.json */; };
 		B42A9CB2265058D80007D653 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A9CB1265058D80007D653 /* DataLoader.swift */; };
 		B42A9CB7265058DE0007D653 /* Houses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A9CB6265058DE0007D653 /* Houses.swift */; };
-		B42A9CE326506C7E0007D653 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = B42A9CE226506C7E0007D653 /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +70,8 @@
 		B42A9CAC265058D10007D653 /* houses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = houses.json; sourceTree = "<group>"; };
 		B42A9CB1265058D80007D653 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		B42A9CB6265058DE0007D653 /* Houses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Houses.swift; sourceTree = "<group>"; };
-		B42A9CE226506C7E0007D653 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		B42A9CEF26507E030007D653 /* door-7-close-[AudioTrimmer.com].wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "door-7-close-[AudioTrimmer.com].wav"; sourceTree = "<group>"; };
+		B42A9CF026507E080007D653 /* Doorbell-sound-effect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Doorbell-sound-effect.wav"; sourceTree = "<group>"; };
 		BC431D154CAB69D20C150846 /* Pods_AR_Home_AR_HomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Home_AR_HomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -150,7 +150,8 @@
 				B42A9CAC265058D10007D653 /* houses.json */,
 				B42A9CB1265058D80007D653 /* DataLoader.swift */,
 				B42A9CB6265058DE0007D653 /* Houses.swift */,
-				B42A9CE226506C7E0007D653 /* Sounds */,
+				B42A9CEF26507E030007D653 /* door-7-close-[AudioTrimmer.com].wav */,
+				B42A9CF026507E080007D653 /* Doorbell-sound-effect.wav */,
 			);
 			path = "AR Home";
 			sourceTree = "<group>";
@@ -300,7 +301,6 @@
 				52B7C27E263902DA000A47EC /* LaunchScreen.storyboard in Resources */,
 				52B7C27B263902DA000A47EC /* Assets.xcassets in Resources */,
 				52B7C279263902D8000A47EC /* Main.storyboard in Resources */,
-				B42A9CE326506C7E0007D653 /* Sounds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

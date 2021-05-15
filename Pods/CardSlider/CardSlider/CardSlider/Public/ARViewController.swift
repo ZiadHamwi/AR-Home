@@ -14,7 +14,7 @@ import AVFoundation
 
 //play audio when house is displayed
 var audioSource: SCNAudioSource = {
-    let source = SCNAudioSource(fileNamed: "Sounds/Doorbell-sound-effect.wav")!
+    let source = SCNAudioSource(fileNamed: "Doorbell-sound-effect.wav")!
     source.loops = false
     source.load()
     return source
@@ -171,7 +171,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         super.viewWillDisappear(animated)
         
         //sound
-        let sound = Bundle.main.path(forResource: "Sounds/door-7-close-[AudioTrimmer.com]", ofType: "wav")
+        let sound = Bundle.main.path(forResource: "door-7-close-[AudioTrimmer.com]", ofType: "wav")
         do{
             audioPlayer2 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
         }
