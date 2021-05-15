@@ -171,7 +171,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         super.viewWillDisappear(animated)
         
         //sound
-        let sound = Bundle.main.path(forResource: "door-7-close-[AudioTrimmer.com]", ofType: "wav")
+        let sound = Bundle.main.path(forResource: "door-7-close", ofType: "wav")
         do{
             audioPlayer2 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
         }
