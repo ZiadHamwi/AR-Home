@@ -242,9 +242,19 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
-    
+    var audioPlayer3 = AVAudioPlayer()
     
     @IBAction func toggleInteriorExteriorFunc(_ sender: Any) {
+        //add audio when button pressed
+        let openDoor = Bundle.main.path(forResource: "door-3-open", ofType: "wav")
+        do{
+            audioPlayer3 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: openDoor!))
+        }
+        catch{
+            print(error)
+        }
+        audioPlayer3.play()
+        
         print("Toggle Interior/Exterior Pressed!")
 
         if !interiorState {

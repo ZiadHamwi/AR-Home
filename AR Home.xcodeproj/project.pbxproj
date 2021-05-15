@@ -25,6 +25,7 @@
 		B42A9CB7265058DE0007D653 /* Houses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A9CB6265058DE0007D653 /* Houses.swift */; };
 		B42A9CFA265080EB0007D653 /* Doorbell-sound-effect.wav in Resources */ = {isa = PBXBuildFile; fileRef = B42A9CF9265080EB0007D653 /* Doorbell-sound-effect.wav */; };
 		B42A9CFF265081120007D653 /* door-7-close.wav in Resources */ = {isa = PBXBuildFile; fileRef = B42A9CFE265081120007D653 /* door-7-close.wav */; };
+		B42A9D04265083B70007D653 /* door-3-open.wav in Resources */ = {isa = PBXBuildFile; fileRef = B42A9D03265083B70007D653 /* door-3-open.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		B42A9CB6265058DE0007D653 /* Houses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Houses.swift; sourceTree = "<group>"; };
 		B42A9CF9265080EB0007D653 /* Doorbell-sound-effect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Doorbell-sound-effect.wav"; sourceTree = "<group>"; };
 		B42A9CFE265081120007D653 /* door-7-close.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "door-7-close.wav"; sourceTree = "<group>"; };
+		B42A9D03265083B70007D653 /* door-3-open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "door-3-open.wav"; sourceTree = "<group>"; };
 		BC431D154CAB69D20C150846 /* Pods_AR_Home_AR_HomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Home_AR_HomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 				B42A9CAC265058D10007D653 /* houses.json */,
 				B42A9CB1265058D80007D653 /* DataLoader.swift */,
 				B42A9CB6265058DE0007D653 /* Houses.swift */,
+				B42A9D03265083B70007D653 /* door-3-open.wav */,
 				B42A9CFE265081120007D653 /* door-7-close.wav */,
 				B42A9CF9265080EB0007D653 /* Doorbell-sound-effect.wav */,
 			);
@@ -300,6 +303,7 @@
 				B42A9CFA265080EB0007D653 /* Doorbell-sound-effect.wav in Resources */,
 				52B7C274263902D8000A47EC /* art.scnassets in Resources */,
 				52F41DF926390CD800028F01 /* Objects in Resources */,
+				B42A9D04265083B70007D653 /* door-3-open.wav in Resources */,
 				B42A9CAD265058D20007D653 /* houses.json in Resources */,
 				52B7C27E263902DA000A47EC /* LaunchScreen.storyboard in Resources */,
 				52B7C27B263902DA000A47EC /* Assets.xcassets in Resources */,
