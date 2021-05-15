@@ -12,6 +12,14 @@ import ARKit
 import SceneKit.ModelIO
 import AVFoundation
 
+//play audio when house is displayed
+var audioSource: SCNAudioSource = {
+    let source = SCNAudioSource(fileNamed: "Sounds/Doorbell-sound-effect.wav")!
+    source.loops = false
+    source.load()
+    return source
+}()
+
 class VirtualObjectNode: SCNNode {
     var AR_Object = ""
     
@@ -47,13 +55,53 @@ class VirtualObjectNode: SCNNode {
         SCNTransaction.commit()
     }
     func loadScn(name: String, inDirectory directory: String) {
-        guard let scene = SCNScene(named: "\(name).scn", inDirectory: directory) else { fatalError() }
-        for child in scene.rootNode.childNodes {
-            child.geometry?.firstMaterial?.lightingModel = .physicallyBased
-            addChildNode(child)
+        if #available(iOS 13.0, *) {
+            //load data from json
+            let data = DataLoader().userData
+            
+            
+            guard let scene = SCNScene(named: "\(name).scn", inDirectory: directory) else { fatalError() }
+            
+            for child in scene.rootNode.childNodes {
+                child.geometry?.firstMaterial?.lightingModel = .physicallyBased
+                addChildNode(child)
+            }
+            
+            //add text over the house from the information in the json file
+            for houses in data{
+                if houses.houseName == name{
+                    let titleNode = textNode(houses.houseName, font: UIFont.boldSystemFont(ofSize: 112))
+                    titleNode.position.x += Float(scene.rootNode.position.x * 2) - 0.5
+                    titleNode.position.y += Float(scene.rootNode.position.y * 2) + 0.9
+                    addChildNode(titleNode)
+                    
+                    let text = "Area: " + houses.area + "\nBedrooms: " + houses.bathrooms + "\nBathrooms: " + houses.bathrooms + "\n" + houses.furnished
+                    let descNode = textNode(text, font: UIFont.boldSystemFont(ofSize: 110))
+                    descNode.position.x += Float(scene.rootNode.position.x * 2) + 0.9
+                    descNode.position.y += Float(scene.rootNode.position.y * 2) - 0.3
+                    addChildNode(descNode)
+                }
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
-    
+    func textNode(_ str: String, font: UIFont, maxWidth: Int? = nil) -> SCNNode {
+        let text = SCNText(string: str, extrusionDepth: 0)
+
+        text.flatness = 0.1
+        text.font = font
+
+        if let maxWidth = maxWidth {
+            text.containerFrame = CGRect(origin: .zero, size: CGSize(width: maxWidth, height: 500))
+            text.isWrapped = true
+        }
+
+        let textNode = SCNNode(geometry: text)
+        textNode.scale = SCNVector3(0.002, 0.002, 0.002)
+
+        return textNode
+    }
 }
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
@@ -116,8 +164,21 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.run()
     }
     
+    //for sound when scene leaves the view
+    var audioPlayer2 = AVAudioPlayer()
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        //sound
+        let sound = Bundle.main.path(forResource: "Sounds/door-7-close-[AudioTrimmer.com]", ofType: "wav")
+        do{
+            audioPlayer2 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+        }
+        catch{
+            print(error)
+        }
+        audioPlayer2.play()
         sceneView.session.pause()
     }
     
@@ -143,6 +204,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         DispatchQueue.main.async(execute: {
             if (self.i == 1) {
                 self.i += 1
+                node.addAudioPlayer(SCNAudioPlayer(source: audioSource))
                 node.addChildNode(virtualNode)
             }
         })
@@ -193,7 +255,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             }
             
             
-            let scene = SCNScene(named: "Objects/Models/model.scn")!
+            let scene = SCNScene(named: "Objects/Models/Cozy Green House.scn")!
             sceneView.scene = scene
         }
         

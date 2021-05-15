@@ -16,7 +16,6 @@
 		4521DA3FEEB5B44D3FAB271E3422EDF5 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67609F249B3D3AD94EF8F742E7F25 /* ARViewController.swift */; };
 		48E4354CFE10AC9E76CAD54740000E87 /* CardSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8AFD43B612FEBB55639E190C6C244 /* CardSliderCell.swift */; };
 		52A4B2B3264FD63000FB5D38 /* Scientist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A4B2B2264FD63000FB5D38 /* Scientist.swift */; };
-		52AD1AA6263BD89500824192 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 52AD1AA5263BD89500824192 /* Images */; };
 		67B667AA41FD375A5DC5335275871853 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		69DD0461BDB40BE02AD34F8671B19694 /* CardSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028244E5DFDCE0A28048ACD78E4EC287 /* CardSliderViewController.swift */; };
 		74987D17B6011C174DED9E2BAA3C2FB7 /* CardTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD701F8078D4A9FFE6BE9954892A0C6 /* CardTitleView.swift */; };
@@ -25,6 +24,9 @@
 		8FEE92EDE571D9F3CD42CEF5A4F4D851 /* Pods-AR Home-AR HomeUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5E4C5F22A0C33D61F4CC7BFD5C60230 /* Pods-AR Home-AR HomeUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		976643079FFE454677EC6F6091E00C77 /* Pods-AR Home-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD394FEC579DFC6087687C18F3F07B7 /* Pods-AR Home-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0FA4D447CF07991A5385A9EC64F6E14 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CECFB687447A90CE74990377AC455A /* Extensions.swift */; };
+		B42A9CC6265059060007D653 /* Houses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A9CC5265059060007D653 /* Houses.swift */; };
+		B42A9CCD2650590E0007D653 /* houses.json in Resources */ = {isa = PBXBuildFile; fileRef = B42A9CCC2650590E0007D653 /* houses.json */; };
+		B42A9CD4265059150007D653 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A9CD3265059150007D653 /* DataLoader.swift */; };
 		C47A8196E42575EF4EE4B779A43DCA10 /* CardSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46966C85DA3997B6EAA5A7910FA9173A /* CardSlider-dummy.m */; };
 		CE73C64FF9381337419EB388328B315E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		E4E1A99699DBD17294B20E60D68474E5 /* Pods-AR HomeTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E63860B2E89267FA1356A68BBD8F42E /* Pods-AR HomeTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -79,7 +81,6 @@
 		46966C85DA3997B6EAA5A7910FA9173A /* CardSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CardSlider-dummy.m"; sourceTree = "<group>"; };
 		50A67609F249B3D3AD94EF8F742E7F25 /* ARViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = CardSlider/CardSlider/Public/ARViewController.swift; sourceTree = "<group>"; };
 		52A4B2B2264FD63000FB5D38 /* Scientist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scientist.swift; sourceTree = "<group>"; };
-		52AD1AA5263BD89500824192 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../../Images; sourceTree = "<group>"; };
 		561656AD3C40D4A786DCCB945213CEFC /* Pods_AR_Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D7251016D3B7A797D8C0649374D3CF /* Pods-AR Home.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AR Home.release.xcconfig"; sourceTree = "<group>"; };
 		65FEA1C43A43B46DF5F9BD88D2DD5BB4 /* Pods_AR_HomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_HomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +99,9 @@
 		AD8F74669ACC1009ADA37ED151F4C49E /* Pods-AR Home-AR HomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AR Home-AR HomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B07273DBCD3F881462F07E368CD5C31F /* CardsLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardsLayout.swift; path = CardSlider/CardSlider/Private/CardsLayout.swift; sourceTree = "<group>"; };
 		B196DB407ED5945329138BD021E45956 /* Pods-AR HomeTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AR HomeTests-dummy.m"; sourceTree = "<group>"; };
+		B42A9CC5265059060007D653 /* Houses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Houses.swift; sourceTree = "<group>"; };
+		B42A9CCC2650590E0007D653 /* houses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = houses.json; sourceTree = "<group>"; };
+		B42A9CD3265059150007D653 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		B6B92EA302EC36BE35352316F4382355 /* Pods-AR HomeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AR HomeTests.modulemap"; sourceTree = "<group>"; };
 		BBE622BD65984C102EB383CEEBD623FE /* CardSlider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CardSlider-Info.plist"; sourceTree = "<group>"; };
 		BD3951D2E61598634DC26598CDD081BC /* Pods-AR Home.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AR Home.modulemap"; sourceTree = "<group>"; };
@@ -186,7 +190,6 @@
 		11F06EDFC4C24C675D97666ABA85C03E /* CardSlider */ = {
 			isa = PBXGroup;
 			children = (
-				52AD1AA5263BD89500824192 /* Images */,
 				50A67609F249B3D3AD94EF8F742E7F25 /* ARViewController.swift */,
 				52A4B2B2264FD63000FB5D38 /* Scientist.swift */,
 				B07273DBCD3F881462F07E368CD5C31F /* CardsLayout.swift */,
@@ -194,6 +197,9 @@
 				028244E5DFDCE0A28048ACD78E4EC287 /* CardSliderViewController.swift */,
 				BFD701F8078D4A9FFE6BE9954892A0C6 /* CardTitleView.swift */,
 				D3CECFB687447A90CE74990377AC455A /* Extensions.swift */,
+				B42A9CC5265059060007D653 /* Houses.swift */,
+				B42A9CD3265059150007D653 /* DataLoader.swift */,
+				B42A9CCC2650590E0007D653 /* houses.json */,
 				0D262D416F70FDA63FD5760FCB8BC6D9 /* Resources */,
 				655F31D96D359FBA73098AF0ED4AEC41 /* Support Files */,
 			);
@@ -502,7 +508,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52AD1AA6263BD89500824192 /* Images in Resources */,
+				B42A9CCD2650590E0007D653 /* houses.json in Resources */,
 				17290FC33443075BAF0FC8C9AD5FB5A2 /* CardSlider.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B42A9CD4265059150007D653 /* DataLoader.swift in Sources */,
 				4521DA3FEEB5B44D3FAB271E3422EDF5 /* ARViewController.swift in Sources */,
 				3815946959FC3A99BAC7D42AF626352C /* CardsLayout.swift in Sources */,
 				C47A8196E42575EF4EE4B779A43DCA10 /* CardSlider-dummy.m in Sources */,
@@ -544,6 +551,7 @@
 				52A4B2B3264FD63000FB5D38 /* Scientist.swift in Sources */,
 				69DD0461BDB40BE02AD34F8671B19694 /* CardSliderViewController.swift in Sources */,
 				74987D17B6011C174DED9E2BAA3C2FB7 /* CardTitleView.swift in Sources */,
+				B42A9CC6265059060007D653 /* Houses.swift in Sources */,
 				B0FA4D447CF07991A5385A9EC64F6E14 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

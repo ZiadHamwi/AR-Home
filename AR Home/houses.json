@@ -1,0 +1,55 @@
+[
+    {
+        "houseName": "Cozy Green House",
+        "description": "2 story house plans (sometimes written \"two story house plans\") are probably the most popular story configuration for a primary residence. A traditional 2 story house plan presents the main living spaces (living room, kitchen, etc) on the main level, while all bedrooms reside upstairs.",
+        "area": "150 sqm",
+        "bedrooms": "3",
+        "bathrooms": "2",
+        "furnished": "Furnished",
+        "price": "90,000$",
+        "contactName": "John Doe",
+        "contactNum": "+96112345678",
+        "contactEmail": "johndoe@email.com",
+        "location": "Hamra, Beirut"
+    },
+    {
+        "houseName": "Cottage",
+        "description": "This compact plan features a fully equipped kitchen with a walk-in pantry and eating bar that comfortably seats up to four. The spacious floor plan accommodates full sized furniture and appliances. 9' ceilings and pocket doors throughout the home create a spacious and open feeling. The pocket doors leading into the master suite and guest room can either be closed for privacy or can provide a large 5' wide opening. The modern walk-in shower in the master suite provides both easy access and eliminates the maintenance required by glass doors. Measuring over 6' from end to end, the shower accommodates dual shower heads. The master suite also includes a dual vanity and a large walk-in closet. This design also features a covered front porch, double garage, mudroom/laundry room and a full bath for guests.",
+        "area": "170 sqm",
+        "bedrooms": "2",
+        "bathrooms": "1",
+        "furnished": "Unfurnished",
+        "price": "85,000$",
+        "contactName": "Elie Naeme",
+        "contactNum": "+96103913318",
+        "contactEmail": "Elienaeme@hotmail.com",
+        "location": "Batroun, Lebanon"
+    },
+    {
+        "houseName": "Residential Building",
+        "description": "A residential building is defined as the building which provides more than half of its floor area for dwelling purposes. In other words, residential building provides sleeping accommodation with or without cooking or dining or both facilities.",
+        "area": "350 sqm",
+        "bedrooms": "4",
+        "bathrooms": "3",
+        "furnished": "Furnished",
+        "price": "210,000$",
+        "contactName": "John Smith",
+        "contactNum": "+96181388283",
+        "contactEmail": "JohnSmith@gmail.com",
+        "location": "Dekwaneh, Lebanon"
+    },
+    {
+        "houseName": "Two Story House",
+        "description": "2 story house plans (sometimes written \"two story house plans\") are probably the most popular story configuration for a primary residence. A traditional 2 story house plan presents the main living spaces (living room, kitchen, etc) on the main level, while all bedrooms reside upstairs.",
+        "area": "450 sqm",
+        "bedrooms": "5",
+        "bathrooms": "3",
+        "furnished": "unfurnished",
+        "price": "200,000$",
+        "contactName": "Karen Khoury",
+        "contactNum": "+96177237021",
+        "contactEmail": "KarenKhoury@mail.com",
+        "location": "Aamchit, Byblos"
+    }
+]
+
