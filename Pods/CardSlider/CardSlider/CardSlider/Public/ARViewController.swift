@@ -24,7 +24,7 @@ class VirtualObjectNode: SCNNode {
         super.init()
         AR_Object = arObject;
 
-        var scale = 1.0
+        var scale = 0.1
         switch type {
         case .houseObject:
             loadScn(name: AR_Object, inDirectory: "Objects/Models")
@@ -61,17 +61,54 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         var current_AR_Object = ""
     var i = 1;
     
+    @IBOutlet weak var statusLbl: UILabel!
     
     
     @IBOutlet weak var toggleDebugPoints: UISwitch!
     
+    @IBOutlet weak var toggleInteriorExterior: UIButton!
+    
+    var interiorState = false;
+    var firstRun = true
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        statusLbl.text = "Move iPhone to begin..."
         sceneView.delegate = self
         sceneView.scene = SCNScene()
-//
+        styleButton()
+        
+        
+        if firstRun {
+            UIView.animate(withDuration: 1) {
+                self.toggleDebugPoints.alpha = 1
+                self.delay(0.5) {
+                    UIView.animate(withDuration: 1) {
+                        self.toggleInteriorExterior.alpha = 1
+                    }
+                }
+            }
+        firstRun = false
+        }
+
+    }
+    
+    
+    
+    func styleButton() {
+        toggleInteriorExterior.setTitle("Switch to Interior", for: .normal)
+        toggleInteriorExterior.backgroundColor = .white
+        toggleInteriorExterior.clipsToBounds = true
+        toggleInteriorExterior.tintColor = .red
+        toggleInteriorExterior.layer.cornerRadius = 10
+        toggleInteriorExterior.layer.borderWidth = 1
+        toggleInteriorExterior.layer.borderColor = UIColor.clear.cgColor
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,34 +121,51 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        guard let frame = sceneView.session.currentFrame else {return}
-        sceneView.updateLightingEnvironment(for: frame)
-    }
+//    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+//        guard let frame = sceneView.session.currentFrame else {return}
+//        sceneView.updateLightingEnvironment(for: frame)
+//    }
+   
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        
+        
         print("\(self.classForCoder)/" + #function)
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {fatalError()}
+//        guard let planeAnchor = anchor as? ARPlaneAnchor else {fatalError()}
+        
+//        statusLbl.text = "House Anchored"
+
         print("House Anchored!")
-        let virtualNode = VirtualObjectNode(current_AR_Object)
+        
+        var virtualNode = VirtualObjectNode(current_AR_Object)
+        
+//        node.addChildNode(virtualNode)
         DispatchQueue.main.async(execute: {
             if (self.i == 1) {
-                self.i+=1
+                self.i += 1
                 node.addChildNode(virtualNode)
             }
         })
+        
+        
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {fatalError()}
-        planeAnchor.updatePlaneNode(on: node)
+//    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+//        guard let planeAnchor = anchor as? ARPlaneAnchor else {fatalError()}
+//        planeAnchor.updatePlaneNode(on: node)
+//    }
+//
+    
+//    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+//        print("\(self.classForCoder)/" + #function)
+//    }
+    
+    
+    
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
-    
-    
-    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
-        print("\(self.classForCoder)/" + #function)
-    }
-    
     
     
     @IBAction func toggleDebugPointsFunc(_ sender: UISwitch) {
@@ -128,6 +182,45 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     
     
+    @IBAction func toggleInteriorExteriorFunc(_ sender: Any) {
+        print("Toggle Interior/Exterior Pressed!")
+
+        if !interiorState {
+            interiorState = !interiorState
+            
+            UIView.animate(withDuration: 2) {
+                self.toggleInteriorExterior.setTitle("Switch to Exterior", for: .normal)
+            }
+            
+            
+            let scene = SCNScene(named: "Objects/Models/model.scn")!
+            sceneView.scene = scene
+        }
+        
+        else if interiorState {
+            interiorState = !interiorState
+            
+            UIView.animate(withDuration: 2) {
+                self.toggleInteriorExterior.setTitle("Switch to Interior", for: .normal)
+            }
+            
+                        
+
+            viewDidLoad()
+            super.viewWillAppear(true)
+            sceneView.session.run()
+            
+            
+            i = 1
+            
+            
+            
+            
+            
+        }
+        
+        
+    }
     
     
     
@@ -254,3 +347,4 @@ fileprivate func PlaneSizeEqualToExtent(plane: SCNPlane, extent: vector_float3) 
         return true
     }
 }
+
