@@ -1,5 +1,31 @@
 [
     {
+        "houseName": "Mansion",
+        "description": "2 story mansions are the most popular story configuration for a luxury residence. A traditional 2 story house plan presents the main living spaces (living room, kitchen, etc) on the main level, while all bedrooms reside upstairs.",
+        "area": "450 sqm",
+        "bedrooms": "5",
+        "bathrooms": "3",
+        "furnished": "Furnished",
+        "price": "600,000$",
+        "contactName": "Steven Paul",
+        "contactNum": "+96172315092",
+        "contactEmail": "StevenPaul@mail.com",
+        "location": "Aamchit, Byblos"
+    },
+    {
+        "houseName": "Macchiato Mansion",
+        "description": "3 story mansions are the most popular story configuration for a luxury residence. A traditional 2 story house plan presents the main living spaces (living room, kitchen, etc) on the main level, while all bedrooms reside upstairs.",
+        "area": "450 sqm",
+        "bedrooms": "5",
+        "bathrooms": "3",
+        "furnished": "Unfurnished",
+        "price": "1,200,000$",
+        "contactName": "Steven Paul",
+        "contactNum": "+96172315092",
+        "contactEmail": "StevenPaul@mail.com",
+        "location": "Aamchit, Byblos"
+    },
+    {
         "houseName": "Cozy Green House",
         "description": "2 story house plans (sometimes written \"two story house plans\") are probably the most popular story configuration for a primary residence. A traditional 2 story house plan presents the main living spaces (living room, kitchen, etc) on the main level, while all bedrooms reside upstairs.",
         "area": "150 sqm",

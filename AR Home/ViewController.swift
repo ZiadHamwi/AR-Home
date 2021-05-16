@@ -67,10 +67,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, CardSliderDataSource,
     let ARhouse = DataLoader().userData
     
     fileprivate let data = [
+        CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Mansion")),
+        CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Macchiato Mansion")),
         CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Cozy Green House")),
+        CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Cottage")),
         CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Residential Building")),
-        CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Two Story House")),
-        CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Cottage"))
+        CustomData(title: "", url: "", backgroundImage: #imageLiteral(resourceName: "Two Story House"))
     ]
     
     fileprivate let collectionView:UICollectionView = {

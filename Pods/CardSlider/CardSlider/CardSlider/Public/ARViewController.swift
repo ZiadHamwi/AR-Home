@@ -19,6 +19,8 @@ var audioSource: SCNAudioSource = {
     source.load()
     return source
 }()
+var titleNode = SCNNode()
+var descNode = SCNNode()
 
 class VirtualObjectNode: SCNNode {
     var AR_Object = ""
@@ -32,12 +34,10 @@ class VirtualObjectNode: SCNNode {
         super.init()
         AR_Object = arObject;
 
-        var scale = 0.1
+        let scale = 0.1
         switch type {
         case .houseObject:
             loadScn(name: AR_Object, inDirectory: "Objects/Models")
-        default:
-            print("Error loading AR object...")
         }
         self.scale = SCNVector3(scale, scale, scale);
     }
@@ -70,15 +70,17 @@ class VirtualObjectNode: SCNNode {
             //add text over the house from the information in the json file
             for houses in data{
                 if houses.houseName == name{
-                    let titleNode = textNode(houses.houseName, font: UIFont.boldSystemFont(ofSize: 112))
+                    titleNode = textNode(houses.houseName, font: UIFont.boldSystemFont(ofSize: 112))
                     titleNode.position.x += Float(scene.rootNode.position.x * 2) - 0.5
-                    titleNode.position.y += Float(scene.rootNode.position.y * 2) + 0.9
+                    titleNode.position.y += Float(scene.rootNode.position.y * 2) + 1.7
+                    titleNode.isHidden = true
                     addChildNode(titleNode)
-                    
+
                     let text = "Area: " + houses.area + "\nBedrooms: " + houses.bathrooms + "\nBathrooms: " + houses.bathrooms + "\n" + houses.furnished
-                    let descNode = textNode(text, font: UIFont.boldSystemFont(ofSize: 110))
-                    descNode.position.x += Float(scene.rootNode.position.x * 2) + 0.9
+                    descNode = textNode(text, font: UIFont.boldSystemFont(ofSize: 110))
+                    descNode.position.x += Float(scene.rootNode.position.x * 2) + 1.5
                     descNode.position.y += Float(scene.rootNode.position.y * 2) - 0.3
+                    descNode.isHidden = true
                     addChildNode(descNode)
                 }
             }
@@ -118,21 +120,26 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     var interiorState = false;
     var firstRun = true
+    var tempText = ""
     
-    
-    
+    var infoDisplay = false
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        statusLbl.text = "Move iPhone to begin..."
+        
         sceneView.delegate = self
         sceneView.scene = SCNScene()
         styleButton()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapView(_:)))
+        view.addGestureRecognizer(tap)
+
+        
         
         if firstRun {
+            statusLbl.text = "Move iPhone to begin..."
             UIView.animate(withDuration: 1) {
                 self.toggleDebugPoints.alpha = 1
                 self.delay(0.5) {
@@ -188,13 +195,33 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 //    }
    
     
+    @objc func tapView(_ sender: UITapGestureRecognizer? = nil) {
+        
+        
+        
+        if !infoDisplay {
+            updateStatusLbl("More Info")
+            titleNode.isHidden = false
+            descNode.isHidden = false
+            infoDisplay = !infoDisplay
+        }
+        else {
+            updateStatusLbl("Tap Screen For More Info")
+            titleNode.isHidden = true
+            descNode.isHidden = true
+            infoDisplay = !infoDisplay
+
+        }
+    }
+
+    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
         
         print("\(self.classForCoder)/" + #function)
 //        guard let planeAnchor = anchor as? ARPlaneAnchor else {fatalError()}
         
-//        statusLbl.text = "House Anchored"
+        
 
         print("House Anchored!")
         
@@ -204,11 +231,35 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         DispatchQueue.main.async(execute: {
             if (self.i == 1) {
                 self.i += 1
+                UIView.animate(withDuration: 0.1) {
+                    self.statusLbl.alpha = 0
+                    self.delay(0.25) {
+                        self.statusLbl.text = "Surface Detected"
+                        self.statusLbl.alpha = 1
+                        
+                        self.delay(0.25) {
+                            self.statusLbl.alpha = 0
+                            
+                            self.delay(0.5) {
+                                self.statusLbl.text = "House Anchored"
+                                self.statusLbl.alpha = 1
+                                
+                                self.delay(2) {
+                                    self.statusLbl.alpha = 0
+                                    self.delay(0.25) {
+                                        self.statusLbl.text = "Tap Screen For More Info"
+                                        self.statusLbl.alpha = 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
                 node.addAudioPlayer(SCNAudioPlayer(source: audioSource))
                 node.addChildNode(virtualNode)
             }
         })
-        
         
     }
     
@@ -232,17 +283,61 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     @IBAction func toggleDebugPointsFunc(_ sender: UISwitch) {
         if sender.isOn == true {
-            print("Button Pressed")
+            print("Debug Points Enabled")
+            
+            tempText = statusLbl.text!
+            updateStatusLbl("Debug Points Enabled")
+            
             sceneView.debugOptions = [SCNDebugOptions.showFeaturePoints]
+            
+            restoreLbl()
         }
         if sender.isOn == false {
-            print("Button Depressed")
+            print("Debug Points Disabled")
+            tempText = statusLbl.text!
+            
+            updateStatusLbl("Debug Points Disabled")
             sceneView.debugOptions = []
+            
+            restoreLbl()
         }
         
     }
     
     var audioPlayer3 = AVAudioPlayer()
+    
+    func updateStatusLbl(_ text:String) {
+        
+        
+        UIView.animate(withDuration: 0.25) {
+            self.statusLbl.alpha = 0
+            self.delay(0.25) {
+                self.statusLbl.text = text
+                self.statusLbl.alpha = 1
+            }
+        }
+        
+    }
+    
+    func restoreLbl() {
+        
+        
+        delay(3) {
+            UIView.animate(withDuration: 0.5) {
+                self.statusLbl.alpha = 0
+                self.delay(0.5) {
+                    if !self.infoDisplay {
+                        self.statusLbl.text = "Tap Screen For More Info"
+                    }
+                    else {
+                        self.statusLbl.text = "More Info"
+                    }
+                    self.statusLbl.alpha = 1
+                }
+            }
+        }
+        
+    }
     
     @IBAction func toggleInteriorExteriorFunc(_ sender: Any) {
         //add audio when button pressed
@@ -259,18 +354,43 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 
         if !interiorState {
             interiorState = !interiorState
+            sceneView.session.pause()
+            
+            UIView.animate(withDuration: 0.5) {
+                self.statusLbl.alpha = 0
+                self.delay(0.5) {
+                    self.statusLbl.text = "Interior Mode Selected"
+                    self.statusLbl.alpha = 1
+                    self.delay(2) {
+                        self.statusLbl.text = ""
+                    }
+                }
+            }
             
             UIView.animate(withDuration: 2) {
                 self.toggleInteriorExterior.setTitle("Switch to Exterior", for: .normal)
             }
-            
-            
-            let scene = SCNScene(named: "Objects/Models/Cozy Green House.scn")!
+            let configuration = ARWorldTrackingConfiguration()
+            sceneView.session.run(configuration)
+            sceneView.delegate = self
+            sceneView.scene = SCNScene()
+            let scene = SCNScene(named: "Objects/Models/" + current_AR_Object + ".scn")!
             sceneView.scene = scene
         }
         
         else if interiorState {
             interiorState = !interiorState
+            
+            UIView.animate(withDuration: 0.5) {
+                self.statusLbl.alpha = 0
+                self.delay(0.5) {
+                    self.statusLbl.text = "Exterior Mode Selected"
+                    self.statusLbl.alpha = 1
+                    self.delay(2) {
+                        self.statusLbl.text = ""
+                    }
+                }
+            }
             
             UIView.animate(withDuration: 2) {
                 self.toggleInteriorExterior.setTitle("Switch to Interior", for: .normal)
