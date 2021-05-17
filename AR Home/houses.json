@@ -2,15 +2,15 @@
     {
         "houseName": "Mansion",
         "description": "2 story mansions are the most popular story configuration for a luxury residence. A traditional 2 story house plan presents the main living spaces (living room, kitchen, etc) on the main level, while all bedrooms reside upstairs.",
-        "area": "450 sqm",
-        "bedrooms": "5",
-        "bathrooms": "3",
+        "area": "750 sqm",
+        "bedrooms": "9",
+        "bathrooms": "6",
         "furnished": "Furnished",
         "price": "600,000$",
-        "contactName": "Steven Paul",
-        "contactNum": "+96172315092",
-        "contactEmail": "StevenPaul@mail.com",
-        "location": "Aamchit, Byblos"
+        "contactName": "John Smith",
+        "contactNum": "+96170110092",
+        "contactEmail": "JohnSmith@mail.com",
+        "location": "Baalbak, Lebanon"
     },
     {
         "houseName": "Macchiato Mansion",
@@ -72,10 +72,11 @@
         "bathrooms": "3",
         "furnished": "Furnished",
         "price": "210,000$",
-        "contactName": "John Smith",
+        "contactName": "Lara tielsman",
         "contactNum": "+96181388283",
-        "contactEmail": "JohnSmith@gmail.com",
+        "contactEmail": "lara_tm@gmail.com",
         "location": "Dekwaneh, Lebanon"
     }
 ]
+
 
